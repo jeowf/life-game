@@ -1,17 +1,14 @@
 #ifndef CELL
 #define CELL
 
-#include <iostream>
-
 namespace lg{
 
 	class Cell{
 		// Alias
 	    public:
-		//typedef short int status_type;
-		typedef size_t neighbors_type; 
+		typedef int neighbors_type; 
 
-		enum class status_type : short int { ALIVE = 0, DEAD };
+		enum class status_type : short int { DEAD = 0, ALIVE  };
 		
 		// Atributos
 		private:
@@ -20,10 +17,11 @@ namespace lg{
 		
 		// Métodos
 		public:
+		// Construtores
 		Cell (status_type, neighbors_type);
-		
 		Cell ();
 
+		// Acessores
 		status_type get_status( void ) const;
 		void set_status( status_type );
 
