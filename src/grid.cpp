@@ -2,14 +2,14 @@
 
 namespace lg{
 
-	Grid::Grid (Grid::dimension_type r, Grid::dimension_type c) : 
+	Grid::Grid (dimension_type r, dimension_type c) : 
 				n_rows(r), n_columns(c) {
 
-		this->grid = new Grid::cell_type*[r];
+		grid = new cell_type*[r];
 		for (int i = 0; i < r; i++){
-			this->grid[i] = new Grid::cell_type[c];
+			grid[i] = new cell_type[c];
 			for (int j = 0; j < c; j++){
-				this->grid[i][j].set_status(lg::Cell::status_type::DEAD);
+				this->at(i,j).set_status(status_type::DEAD);
 			}
 		}
 		
@@ -17,17 +17,17 @@ namespace lg{
 
 	Grid::~Grid (){
 		for (int i = 0; i < n_rows; i++)
-    		delete [] this->grid[i];
-		delete [] this->grid;
+    		delete [] grid[i];
+		delete [] grid;
 	}
 
-	void Grid::set_alive(Grid::i_cell_type alive_value, Grid::i_cell_type **i_grid){
+	void Grid::set_alive(i_cell_type alive_value, i_cell_type **i_grid){
 		for (int i = 0; i < n_rows; i++){
 			for (int j = 0; j < n_columns; j++){
 				if (i_grid[i][j] == alive_value)
-					this->grid[i][j].set_status(lg::Cell::status_type::ALIVE);
+					this->at(i,j).set_status(status_type::ALIVE);
 				else
-					this->grid[i][j].set_status(lg::Cell::status_type::DEAD);
+					this->at(i,j).set_status(status_type::DEAD);
 			}
 		}
 	}
@@ -35,7 +35,7 @@ namespace lg{
 	void Grid::print_grid() const {
 		for (int i = 0; i < n_rows; i++){
 			for (int j = 0; j < n_columns; j++){
-				std::cout << (int) this->grid[i][j].get_status() << " ";
+				std::cout << (int) grid[i][j].get_status() << " ";
 			}
 			std::cout << std::endl;
 		}
@@ -44,48 +44,76 @@ namespace lg{
 	void Grid::print_neighbors() const {
 		for (int i = 0; i < n_rows; i++){
 			for (int j = 0; j < n_columns; j++){
-				std::cout << (int) this->grid[i][j].get_n_neighbors() << " ";
+				std::cout << (int) grid[i][j].get_n_neighbors() << " ";
 			}
 			std::cout << std::endl;
 		}
 	}
 
 	void Grid::update(){
+		this->reset_neighbors();
+		this->calculate_neighbors();
+
 		for (int i = 0; i < n_rows; i++){
 			for (int j = 0; j < n_columns; j++){
-				this->grid[i][j].set_n_neighbors(0);
+				if ((this->at(i,j).get_status() == status_type::ALIVE) and
+				   (this->at(i,j).get_n_neighbors() <= 1 or 
+					this->at(i,j).get_n_neighbors() >= 4))
+					this->at(i,j).set_status(status_type::DEAD);
+				else if (this->at(i,j).get_status() == status_type::DEAD and
+				 		 this->at(i,j).get_n_neighbors() == 3)
+					this->at(i,j).set_status(status_type::ALIVE);	
 			}
 		}
 
+	}
 
+	void Grid::reset_neighbors(){
 		for (int i = 0; i < n_rows; i++){
 			for (int j = 0; j < n_columns; j++){
-				if (this->grid[i][j].get_status() == lg::Cell::status_type::ALIVE){
+				this->at(i,j).set_n_neighbors(0);
+			}
+		}
+	}
+
+	void Grid::calculate_neighbors(){
+		for (int i = 0; i < n_rows; i++){
+			for (int j = 0; j < n_columns; j++){
+				if (this->at(i,j).get_status() == status_type::ALIVE){
 
 					// analisa visinhança
 					for (int x = i-1; x <= i+1; x++){
 						for (int y = j-1; y <= j+1; y++){
-							if (this->grid[wrap_index(x, 0, n_rows)][wrap_index(y, 0, n_columns)].get_status() == lg::Cell::status_type::ALIVE)
-								this->grid[i][j].set_n_neighbors( this->grid[i][j].get_n_neighbors() + 1);
-								//this->grid[i][j]++ // .set_status(lg::Cell::status_type::DEAD);
-							this->grid[wrap_index(x, 0, n_rows)][wrap_index(y, 0, n_columns)].set_n_neighbors( this->grid[wrap_index(x, 0, n_rows)][wrap_index(y, 0, n_columns)].get_n_neighbors() + 1);
+							if (this->at(x,y).get_status() == status_type::ALIVE)
+								this->at(i,j).set_n_neighbors( this->at(i,j).get_n_neighbors() + 1);
+							else
+								this->at(x,y).set_n_neighbors( this->at(x,y).get_n_neighbors() + 1);
 						}
 					}
+					//tirando a propria celula q é contada
+					this->at(i,j).set_n_neighbors( this->at(i,j).get_n_neighbors() - 1);
+
 				}
 
 			}
 		}
 	}
 
-	Grid::index_type Grid::wrap_index(Grid::index_type v, 
-									  Grid::index_type i_min, 
-									  Grid::index_type i_max){
-		if (v < i_min)
-			return (i_max - 1) - (i_min - v);
-		else if (v >= i_max)
-			return i_min + (v - i_max);
-		else 
-			return v;
+	
+	Grid::index_type Grid::wrap_index(index_type v, 
+									  index_type i_min, 
+								      index_type i_max){
+
+		if (v < i_min) 		 return i_max - (i_min - v);
+		else if (v >= i_max) return i_min + (v - i_max);
+		else  			     return v;
+
+	}
+
+	Grid::cell_type& Grid::at(index_type x, 
+							  index_type y){
+		return this->grid[this->wrap_index(x, 0, n_rows)]
+						 [this->wrap_index(y, 0, n_columns)];
 
 	}
 

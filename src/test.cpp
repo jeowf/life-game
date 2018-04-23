@@ -24,11 +24,29 @@ int main(){
 		}
 	}
 
+	for (int i = 0; i < rows; i++){
+		a[i][3] = 1;
+	}
+
 	grid.set_alive(1, a);
+	grid.print_grid();
+	std::cout << std::endl;
+
 	grid.update();
 	grid.print_grid();
 	std::cout << std::endl;
+
+	//grid.at(0,0) += (int) 20;
+	//grid.at(-1,-1).set_n_neighbors(20);
 	grid.print_neighbors();
+
+	std::cout << std::endl;
+
+	grid.update();
+	grid.print_grid();
+
+
+
 
 	return 0;
 }

@@ -6,7 +6,8 @@ namespace lg{
 	class Cell{
 		// Alias
 	    public:
-		typedef int neighbors_type; 
+		typedef int neighbors_type;
+		typedef int& ref; 
 
 		enum class status_type : short int { DEAD = 0, ALIVE  };
 		
@@ -27,6 +28,8 @@ namespace lg{
 
 		neighbors_type get_n_neighbors( void ) const;
 		void set_n_neighbors( neighbors_type );
+
+		ref operator+= (const ref rhs);
 
 	};
 

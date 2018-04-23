@@ -2,25 +2,30 @@
 
 namespace lg{
 
-	Cell::Cell (Cell::status_type s, Cell::neighbors_type n) : status(s), 
-															   n_neighbors(n = 0) { }
-	Cell::Cell () : status(Cell::status_type::DEAD), 
+	Cell::Cell (status_type s, neighbors_type n) : status(s), 
+													n_neighbors(n = 0) { }
+	Cell::Cell () : status(status_type::DEAD), 
 					n_neighbors(0) { }
 
 	Cell::status_type Cell::get_status( void ) const{
-		return this->status;
+		return status;
 	}
 
-	void Cell::set_status( Cell::status_type s){
-		this->status = s;
+	void Cell::set_status( status_type s){
+		status = s;
 	}
 
 	Cell::neighbors_type Cell::get_n_neighbors( void ) const{
-		return this->n_neighbors;
+		return n_neighbors;
 	}
 
-	void Cell::set_n_neighbors( Cell::neighbors_type n){
-		this->n_neighbors = n;
+	void Cell::set_n_neighbors( neighbors_type n){
+		n_neighbors = n;
 	}
+
+	Cell::ref Cell::operator+= (const ref rhs){
+		return this->n_neighbors += rhs;
+	}
+
 
 }

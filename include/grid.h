@@ -13,10 +13,11 @@ namespace lg{
 		//typedef short int status_type;
 		typedef long int dimension_type; 
 		typedef lg::Cell cell_type;
+		typedef lg::Cell::status_type status_type;
 		typedef int i_cell_type;
 		typedef int index_type;
 
-		//enum class direction_type : short int { ROW = 0, COLUMN  };
+//		enum class rules_type : short int { BORN = 3,   };
 		
 		// Atributos
 		private:
@@ -40,9 +41,15 @@ namespace lg{
 
 		//bool is_extinct() const;
 
+		
+
 		void update();
 
+		cell_type& at(index_type, index_type);
+
 		private:
+		void calculate_neighbors();
+		void reset_neighbors();
 		index_type wrap_index(index_type, index_type, index_type);
 
 
