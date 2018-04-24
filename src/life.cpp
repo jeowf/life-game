@@ -6,19 +6,12 @@ namespace lg{
 				rows(r), cols(c), out_char(o) {
 		grid = new grid_type(r,c);
 		gen = 0;
-
-		//std::cout << "opa\n";
-		//grid->print_grid();
-		//grid(r, c);
 	}
 
 	Life::~Life(){
 		delete grid;
 	}
 
-	// Life::print(){
-
-	// }
 	void Life::set_alive(i_cell_type alive_value, i_cell_type **i_grid){
 		for (int i = 0; i < rows; i++){
 			for (int j = 0; j < cols; j++){
@@ -28,8 +21,29 @@ namespace lg{
 					grid->at(i,j).set_status(status_type::DEAD);
 			}
 		}
+
+		this->save_gen();
 	}
 
+	void Life::update(){
+		grid->reset_neighbors();
+		grid->calculate_neighbors();
+		grid->next_gen();
+		this->save_gen();
+		gen++;
+
+	}
+
+	void Life::save_gen(){
+		lg::Gen gen;
+		for (int i = 0; i < rows; i++){
+			for (int j = 0; j < cols; j++){
+				if (grid->at(i, j).get_status() == status_type::ALIVE)
+					gen.add(i,j);
+			}
+		}
+		generations.push_back(gen);
+	}
 
 	std::ostream& operator<<(std::ostream& os, const Life& lf) {  
 
@@ -56,7 +70,11 @@ namespace lg{
 	}  
   
 	
-	
+	bool Life::is_stable() const{
+		return false;
+	}
+
+
 
 
 }

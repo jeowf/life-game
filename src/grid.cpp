@@ -21,41 +21,6 @@ namespace lg{
 		delete [] grid;
 	}
 
-	void Grid::set_alive(i_cell_type alive_value, i_cell_type **i_grid){
-		for (int i = 0; i < n_rows; i++){
-			for (int j = 0; j < n_columns; j++){
-				if (i_grid[i][j] == alive_value)
-					this->at(i,j).set_status(status_type::ALIVE);
-				else
-					this->at(i,j).set_status(status_type::DEAD);
-			}
-		}
-	}
-
-	void Grid::print_grid() const {
-		for (int i = 0; i < n_rows; i++){
-			for (int j = 0; j < n_columns; j++){
-				std::cout << (int) grid[i][j].get_status() << " ";
-			}
-			std::cout << std::endl;
-		}
-	}
-
-	void Grid::print_neighbors() const {
-		for (int i = 0; i < n_rows; i++){
-			for (int j = 0; j < n_columns; j++){
-				std::cout << (int) grid[i][j].get_n_neighbors() << " ";
-			}
-			std::cout << std::endl;
-		}
-	}
-
-	void Grid::update(){
-		this->reset_neighbors();
-		this->calculate_neighbors();
-		this->next_gen();
-	}
-
 	void Grid::reset_neighbors(){
 		for (int i = 0; i < n_rows; i++){
 			for (int j = 0; j < n_columns; j++){

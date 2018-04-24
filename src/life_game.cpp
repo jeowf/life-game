@@ -5,6 +5,7 @@
 
 //#include "grid.h"
 #include "life.h"
+#include "gen.h"
 
 // Alias
 
@@ -98,7 +99,13 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 	life.set_alive(1, a);
 
 	std::cout << life;
-	//outfile << life;
+
+	
+
+	for (int i = 0; i < 10; i++){
+		life.update();
+		std::cout << life;
+	}
 
 	file.close();// fecha os arquivos
 	outfile.close();

@@ -2,8 +2,10 @@
 #define LIFE
 
 #include <iostream>
-#include <iomanip>
+#include <vector>
+
 #include "grid.h"
+#include "gen.h"
 
 namespace lg{
 
@@ -29,6 +31,8 @@ namespace lg{
 		grid_type *grid;
 		char_type out_char;
 		gen_type gen;
+
+		std::vector<lg::Gen> generations;
 		
 		// Métodos
 		public:
@@ -38,6 +42,14 @@ namespace lg{
 		~Life();
 
 		void set_alive(i_cell_type, i_cell_type **);
+
+		void update();
+
+		void save_gen();
+
+		bool is_stable() const;
+
+		bool is_extinct() const;
 
 		friend std::ostream& operator<<(std::ostream&, const Life&);
 
