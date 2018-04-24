@@ -27,9 +27,6 @@ namespace lg{
 		// Métodos
 		public:
 		// Construtores
-		Gen();
-
-		~Gen();
 
 		void add(index_type i, index_type j);
 
