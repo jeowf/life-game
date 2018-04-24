@@ -1,8 +1,6 @@
 #ifndef GRID
 #define GRID
 
-#include <iostream>
-
 #include "cell.h"
 
 namespace lg{
@@ -11,25 +9,36 @@ namespace lg{
      * @brief A class that storages and operates a matrix of Cells
 	*/
 	class Grid{
-		//<!-- Alias
+
+		///
+		/// Alias
+		///
+
 	    public:
 		typedef long int dimension_type; 			/*!< Type of dimension */
 		typedef lg::Cell cell_type;					/*!< Type of Cell */
-		typedef lg::Cell::status_type status_type;  /*!< Type of status of the Cell */
+		typedef lg::Cell::status_type status_type;  /*!< Type of status of the Cells */
 		typedef int i_cell_type;					/*!< Type of grid of initialization */
 		typedef int index_type;						/*!< Type of index in Grid */
 		
-		// Attributes
+		///
+		/// Attributes
+		///
+
 		private:
 		dimension_type n_rows;		/*!< Number of rows */
 		dimension_type n_columns;	/*!< Number of columns */
 		cell_type **grid;			/*!< Matrix of Cells */
 		
-		// Methods
+		
+		///
+		/// Methods
+		///
+
 		public:
 
 		/*! 
-		 * @brief Grid constructor
+		 * @brief Grid Constructor
 	 	 *
 		 * Initialize this Grid with DEAD Cells
 		 *
@@ -39,14 +48,14 @@ namespace lg{
 		Grid (dimension_type, dimension_type);
 
 		/*! 
-		 * @brief Grid destructor
+		 * @brief Grid Destructor
 		 *
 		 * Destroys this Grid
 		*/
 		~Grid ();
 
 		/*! 
-		 * @brief Return the Cell at specified position
+		 * @brief At
 		 *
 		 * Get the Cell at specified coordinate in this Grid 
 		 *
@@ -59,21 +68,21 @@ namespace lg{
 
 
 		/*! 
-		 * @brief Calculate the alive neighbors
+		 * @brief Calculate Neighbors
 		 *
 		 * Calculate the number of ALIVE neighbors in this Grid
 		*/
 		void calculate_neighbors();
 
 		/*! 
-		 * @brief Reset the number neighbors
+		 * @brief Reset Neighbors
 		 *
 		 * Reset the number of neighbors of all Cells in this Grid
 		*/
 		void reset_neighbors();
 
 		/*! 
-		 * @brief Calculate the next generation
+		 * @brief Next Generation
 		 *
 		 * Generate the next generation based on rules B3/S23
 		*/
@@ -81,9 +90,9 @@ namespace lg{
 
 		private:
 		/*! 
-		 * @brief Return wrapped index in this Grid
+		 * @brief Wrap Index
 		 *
-		 * Return a wrapped index in [min,max]
+		 * Return a wrapped index in this Grid
 		 *
 		 * @param v index
 		 * @param i_min minumum index

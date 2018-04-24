@@ -1,5 +1,5 @@
 CC = g++
-PROG = life_game
+PROG = life
 CPPFLAGS = -O -Wall -std=c++11 -I $(HEADER_DIR)
 SRC_PATH = src
 BUILD_PATH = .

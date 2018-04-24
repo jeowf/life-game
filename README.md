@@ -1,16 +1,19 @@
 # LifeGame
 Conway's Life Game
 
-Desenvolvido por Alison Hedigliranes da Silva e Felipe Morais da Silva.
+**Desenvolvido por:**
+
+ - Alison Hedigliranes da Silva
+ - Felipe Morais da Silva
 
 # Objetivos
  
- - [ ] Modelar classes
- - [ ] Organizar código em sub-pastas
- - [ ] Criar makefile
- - [ ] Implementar classes
- - [ ] Implementar programa
- - [ ] Documentar código
+ - [x] Modelar classes
+ - [x] Organizar código em sub-pastas
+ - [x] Criar makefile
+ - [x] Implementar classes
+ - [x] Implementar programa
+ - [x] Documentar código
 
 ## Descrição
 
@@ -37,14 +40,14 @@ que estão nascendo não irão preservar ou matar células vivas na geração an
 Para gerar o executavel do programa rode dentro da pasta:
 
 ```
-Make
+make
 ```
 Assim será gerado um executável nomeado "life".
 
 Para executar o programa use:
 
 ```
-./life <input_cfg_file> (<output_cfg_evolution_file>)
+./life <input_cfg_file> \[<output_cfg_evolution_file>\] \[<a> to auto\]
 ```
 
 Onde o primeiro parâmetro é um arquivo de entrada contendo o tamanho da matriz,

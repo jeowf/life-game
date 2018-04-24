@@ -5,7 +5,7 @@ namespace lg{
 	Grid::Grid (dimension_type r, dimension_type c) : 
 				n_rows(r), n_columns(c) {
 
-		//alocar a grid
+		//aloca a grid
 		grid = new cell_type*[r];
 		for (int i = 0; i < r; i++){
 			grid[i] = new cell_type[c];

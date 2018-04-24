@@ -29,8 +29,6 @@ namespace lg{
 		neighbors_type get_n_neighbors( void ) const;
 		void set_n_neighbors( neighbors_type );
 
-		ref operator+= (const ref rhs);
-
 	};
 
 }

@@ -23,9 +23,4 @@ namespace lg{
 		n_neighbors = n;
 	}
 
-	Cell::ref Cell::operator+= (const ref rhs){
-		return this->n_neighbors += rhs;
-	}
-
-
 }
