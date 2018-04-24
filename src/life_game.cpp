@@ -22,8 +22,8 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 	}
 
 	//variaveis do sistema
-	int m = 0;
-	int n = 0;
+	int rows = 0;
+	int cols = 0;
 	char alive;
 	char cell;
 	std::ifstream file;
@@ -37,65 +37,39 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 	if (file.is_open()){
 		getline(file, row_data); // pega a linha das dimensões
 		std::istringstream al(row_data);
-		al >> m; // pega m'
-		al >> n; // pega n
+		al >> rows; // pega m'
+		al >> cols; // pega n
 
 		getline(file, row_data);//pega a linha do caracter de 'vivo'
 		std::istringstream ast(row_data);
 		ast >> alive;
 		//char field[m][n];// criação da matriz
-		a = new c_type * [m];
+		a = new c_type * [rows];
 
 		while (!file.eof()){
-			for (int i = 0; i < m; i++){
-				a[i] = new c_type[n];
+			for (int i = 0; i < rows; i++){
+				a[i] = new c_type[cols];
 				getline(file, row_data);//pega cada linha do primeiro estado e salva na matriz
 				std::istringstream place(row_data); 
-				for (int j = 0; j < n; j++){
-					//a[i][j] = 0;
-					//std::cout << "AA: " << place << " ";
+				for (int j = 0; j < cols; j++){
+
 					place >> cell;
-					//a[i][j] = cell;
+
 					 if (cell == alive) 
 					 	a[i][j] = 1;
 					 else
 					 	a[i][j] = 0;
 
-					//place >> dead;
-					//field[i][j] = dead;
-
-					//outfile << a[i][j];// caso exista arquivo de saida salva uma cópia nele
-
 				}
 
-				//outfile << std::endl;
 			}
 		}
 	} else {
 		std::cerr << "ERROR: Cannot read the file!" << std::endl;		
 		return 1;
 	}
-//================== Essa parte é o print de teste ===========================================
 
-	// for (int i = 0; i < m; i++){
-	// 	for (int j = 0; j < n; j++){
-	// 		std::cout << field[i][j];
-	// 	}
-	// std::cout << std::endl;	
-	// }
-	
-	// lg::Grid grid(m, n);
-	// grid.set_alive(1, a);
-
-	// std::cout << std::endl;
-
-	// grid.update();
-
-	// grid.print_grid();
-	// std::cout << std::endl;
-
-//================== Vai virar uma função ======================================================
-	lg::Life life(m, n, alive);
+	lg::Life life(rows, cols, alive);
 	life.set_alive(1, a);
 
 	std::cout << life << std::endl;
@@ -104,13 +78,10 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 	char sel = 'y';
 	int s_config = -1;
 
+	std::cout << "Next generation? (y/N) ";
+	std::cin >> sel;
+
 	while (sel == 'y'){
-		
-
-		std::cout << "Next generation? (y/N) ";
-		std::cin >> sel;
-
-		
 
 		std::cout<<std::endl;
 
@@ -128,6 +99,9 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 			outfile << "EXTINCT CONFIGURATION!" << std::endl;
 			break;
 		}
+
+		std::cout << "Next generation? (y/N) ";
+	std::cin >> sel;
 
 	}
 

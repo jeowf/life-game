@@ -2,7 +2,7 @@
 
 namespace lg{
 
-	Life::Life (dimension_type c, dimension_type r, char_type o) : 
+	Life::Life (dimension_type r, dimension_type c, char_type o) : 
 				rows(r), cols(c), out_char(o) {
 		grid = new grid_type(r,c);
 		gen = 0;
