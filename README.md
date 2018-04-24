@@ -53,7 +53,8 @@ Para executar o programa use:
 Onde o primeiro parâmetro é um arquivo de entrada contendo o tamanho da matriz,
 caractere desejado para indicar células vivas e o estado inicial das células.
 O segundo parâmetro é opcional onde pode ser passado o nome de uma arquivo de saida
-que guardará o histórico de gerações.
+que guardará o histórico de gerações. O último gera cada geração automáticamente sem
+que o usuário precise confirmar se deseja ir para uam próxima geração.
 
 Para apagar o executável:
 
