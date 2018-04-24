@@ -1,4 +1,5 @@
 CC = g++
+PROG = life_game
 CPPFLAGS = -O -Wall -std=c++11 -I $(HEADER_DIR)
 SRC_PATH = src
 BUILD_PATH = .
@@ -10,11 +11,11 @@ SRC_DIR     = ./src/
 BIN_DIR     = ./bin/
 
 life: $(OBJS)
-	$(CC) $(OBJS) -o life
+	$(CC) $(OBJS) -o $(PROG)
 	mv *.o $(BIN_DIR)
 
 $(BUILD_PATH)/%.o: $(SRC_PATH)/%.$(SRC_EXT)
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(BIN_DIR)*.o life r *.o
+	rm -f $(BIN_DIR)*.o $(PROG) *.o

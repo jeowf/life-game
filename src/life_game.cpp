@@ -3,16 +3,12 @@
 #include <string>
 #include <sstream>
 
+#include <thread>
+#include <chrono> 
+
 //#include "grid.h"
 #include "life.h"
 #include "gen.h"
-
-
-/*! \mainpage Life Game
- *
- * Desenvolvido por Alison Hedigliranes e Felipe Morais
- */
-
 
 // Alias
 
@@ -21,25 +17,46 @@ typedef lg::Grid::i_cell_type c_type;
 //typedef std::ifstream 
 
 int main(int argc, char* argv[]){ // Argumentos da linha de comando
-
-	if (argc < 2 || argc > 3){ // verifica a quantidade de argumentos
-		std::cerr << "Wrong syntaxe!"  << std::endl;
-		std::cerr << "Use: " << argv[0] << " <input_cfg_file> [<output_cfg_evolution_file>]" << std::endl; // mensagem de erro
-		return 1;
-	}
-
 	//variaveis do sistema
 	int rows = 0;
 	int cols = 0;
 	char alive;
 	char cell;
-	std::ifstream file;
+	bool auto_arg = false;
 	std::string row_data;
+
+	std::ifstream file;
+	std::ofstream outfile;
+
 
 	c_type **a;
 
-	file.open(argv[1]); // abre o arquivo passado na linha de comando	
-	std::ofstream outfile(argv[2]);//salva no arquivo de saida desejado
+	if (argc == 4){
+		if (argv[3][0] != 'a'){
+			std::cerr << "Wrong syntaxe!"  << std::endl;
+			std::cerr << "Use: " << argv[0] << " <input_cfg_file> [<output_cfg_evolution_file>] [<a> to auto]" << std::endl; // mensagem de erro
+			return 1;
+		}
+		outfile.open(argv[2]);
+		auto_arg = true;
+	} else if (argc == 3){
+		if (argv[2][0] == 'a'){
+			outfile.open("out.txt");
+			auto_arg = true;
+		} else {
+			outfile.open(argv[2]);
+		}
+	} else if (argc == 2){
+		outfile.open("out.txt");
+	} else {
+		if (argc < 2 || argc > 4){ // verifica a quantidade de argumentos
+			std::cerr << "Wrong syntaxe!"  << std::endl;
+			std::cerr << "Use: " << argv[0] << " <input_cfg_file> [<output_cfg_evolution_file>] [<a> to auto]" << std::endl; // mensagem de erro
+		}
+		return 1;
+	}
+
+	file.open(argv[1]); // abre o arquivo passado na linha de comando
 
 	if (file.is_open()){
 		getline(file, row_data); // pega a linha das dimensões
@@ -79,15 +96,21 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 	lg::Life life(rows, cols, alive);
 	life.set_alive(1, a);
 
+	for (int i = 0; i < rows; i++)
+    	delete [] a[i];
+	delete [] a;
+
 	std::cout << life << std::endl;
 	outfile << life << std::endl;
 
 	char sel = 'y';
 	int s_config = -1;
 
-	std::cout << "Next generation? (y/N) ";
-	std::cin >> sel;
-
+	if (!auto_arg) {
+		std::cout << "Next generation? (y/N) ";
+		std::cin >> sel;
+	}
+	
 	while (sel == 'y'){
 
 		std::cout<<std::endl;
@@ -107,10 +130,16 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 			break;
 		}
 
-		std::cout << "Next generation? (y/N) ";
-	std::cin >> sel;
+		if (auto_arg){
+			std::this_thread::sleep_for (std::chrono::seconds(1));
+		} else {
+			std::cout << "Next generation? (y/N) ";
+			std::cin >> sel;
+		}
 
 	}
+
+	
 
 	file.close();// fecha os arquivos
 	outfile.close();

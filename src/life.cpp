@@ -31,7 +31,6 @@ namespace lg{
 		grid->next_gen();
 		this->save_gen();
 		gen++;
-		//std::cout << "EXTINCTC?: " << (bool) this->is_extinct() << std::endl;
 
 	}
 
@@ -84,10 +83,4 @@ namespace lg{
     	return os;  
 	}  
   
-	
-	
-
-
-
-
 }
