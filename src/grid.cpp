@@ -53,19 +53,7 @@ namespace lg{
 	void Grid::update(){
 		this->reset_neighbors();
 		this->calculate_neighbors();
-
-		for (int i = 0; i < n_rows; i++){
-			for (int j = 0; j < n_columns; j++){
-				if ((this->at(i,j).get_status() == status_type::ALIVE) and
-				   (this->at(i,j).get_n_neighbors() <= 1 or 
-					this->at(i,j).get_n_neighbors() >= 4))
-					this->at(i,j).set_status(status_type::DEAD);
-				else if (this->at(i,j).get_status() == status_type::DEAD and
-				 		 this->at(i,j).get_n_neighbors() == 3)
-					this->at(i,j).set_status(status_type::ALIVE);	
-			}
-		}
-
+		this->next_gen();
 	}
 
 	void Grid::reset_neighbors(){
@@ -95,6 +83,20 @@ namespace lg{
 
 				}
 
+			}
+		}
+	}
+
+	void Grid::next_gen(){
+		for (int i = 0; i < n_rows; i++){
+			for (int j = 0; j < n_columns; j++){
+				if ((this->at(i,j).get_status() == status_type::ALIVE) and
+				   (this->at(i,j).get_n_neighbors() <= 1 or 
+					this->at(i,j).get_n_neighbors() >= 4))
+					this->at(i,j).set_status(status_type::DEAD);
+				else if (this->at(i,j).get_status() == status_type::DEAD and
+				 		 this->at(i,j).get_n_neighbors() == 3)
+					this->at(i,j).set_status(status_type::ALIVE);	
 			}
 		}
 	}

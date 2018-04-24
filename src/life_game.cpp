@@ -3,7 +3,8 @@
 #include <string>
 #include <sstream>
 
-#include "grid.h"
+//#include "grid.h"
+#include "life.h"
 
 // Alias
 
@@ -69,6 +70,9 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 				outfile << std::endl;
 			}
 		}
+	} else {
+		std::cerr << "ERROR: Cannot read the file!" << std::endl;		
+		return 1;
 	}
 //================== Essa parte é o print de teste ===========================================
 
@@ -79,15 +83,22 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 	// std::cout << std::endl;	
 	// }
 	
-	lg::Grid grid(m, n);
-	grid.set_alive(1, a);
+	// lg::Grid grid(m, n);
+	// grid.set_alive(1, a);
 
-	std::cout << std::endl;
+	// std::cout << std::endl;
 
-	grid.print_grid();
-	std::cout << std::endl;
+	// grid.update();
+
+	// grid.print_grid();
+	// std::cout << std::endl;
 
 //================== Vai virar uma função ======================================================
+	lg::Life life(m, n, alive);
+	life.set_alive(1, a);
+
+	std::cout << life;
+	//outfile << life;
 
 	file.close();// fecha os arquivos
 	outfile.close();

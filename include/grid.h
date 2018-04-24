@@ -50,6 +50,8 @@ namespace lg{
 		private:
 		void calculate_neighbors();
 		void reset_neighbors();
+		void next_gen();
+
 		index_type wrap_index(index_type, index_type, index_type);
 
 
