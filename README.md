@@ -46,6 +46,7 @@ Para executar o programa use:
 ```
 ./life <input_cfg_file> (<output_cfg_evolution_file>)
 ```
+
 Onde o primeiro parâmetro é um arquivo de entrada contendo o tamanho da matriz,
 caractere desejado para indicar células vivas e o estado inicial das células.
 O segundo parâmetro é opcional onde pode ser passado o nome de uma arquivo de saida

@@ -17,4 +17,4 @@ $(BUILD_PATH)/%.o: $(SRC_PATH)/%.$(SRC_EXT)
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(BIN_DIR)*.o life *.o
+	rm -f $(BIN_DIR)*.o life r *.o
