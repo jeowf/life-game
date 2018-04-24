@@ -7,6 +7,13 @@
 #include "life.h"
 #include "gen.h"
 
+
+/*! \mainpage Life Game
+ *
+ * Desenvolvido por Alison Hedigliranes e Felipe Morais
+ */
+
+
 // Alias
 
 typedef std::string string;

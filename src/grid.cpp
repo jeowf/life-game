@@ -1,6 +1,18 @@
 #include "grid.h"
 
+
 namespace lg{
+
+/**
+ *****************************************************************************************
+ *  @brief Grid Construtor
+ *
+ *  Inicializa uma Grid com células mortas
+ * 
+ *  @param      r número de linhas
+ *  @param      c número de colunas
+ *
+ ****************************************************************************************/
 
 	Grid::Grid (dimension_type r, dimension_type c) : 
 				n_rows(r), n_columns(c) {
@@ -18,6 +30,14 @@ namespace lg{
 		
 	}
 
+/**
+ *****************************************************************************************
+ *  @brief      Grid Destrutor
+ *
+ *  Desaloca uma Grid
+ * 
+ ****************************************************************************************/
+
 	Grid::~Grid (){
 		// desalocar a grid
 		for (int i = 0; i < n_rows; i++)
@@ -25,6 +45,13 @@ namespace lg{
 		delete [] grid;
 	}
 
+/**
+ *****************************************************************************************
+ *  @brief Reset Neihbors
+ *
+ *  Coloca todos os vizinhos de uma célula em valor 0
+ *
+ ****************************************************************************************/
 	void Grid::reset_neighbors(){
 		// para todas as células da grid, calcule os vizinhos
 		for (int i = 0; i < n_rows; i++){
@@ -34,6 +61,14 @@ namespace lg{
 		}
 	}
 
+/**
+ *****************************************************************************************
+ *  @brief Calculate Neighbors
+ *
+ *  Conta quantas células vizinhas estão vivas
+ * 
+ *
+ ****************************************************************************************/
 	void Grid::calculate_neighbors(){
 		// percorre as células da grid
 		for (int i = 0; i < n_rows; i++){
@@ -60,6 +95,13 @@ namespace lg{
 		}
 	}
 
+/**
+ *****************************************************************************************
+ *  @brief Next Gen
+ *
+ *  Aplica as regras para determina quais células nascem ou morrem na próxima geração
+ *
+ ****************************************************************************************/
 	void Grid::next_gen(){
 		// para todas as células na grid
 		for (int i = 0; i < n_rows; i++){
@@ -80,7 +122,20 @@ namespace lg{
 		}
 	}
 
-	
+
+/**
+ *****************************************************************************************
+ *  @brief Wrap Index
+ *
+ *  Verifica se o indice está no limite e compensa caso não esteja
+ * 
+ *  @param      v indice atual
+ *  @param      i_min menor índice
+ *  @param      i_max maior índice
+ *	
+ *	@return		offset baseado nos indices
+ ****************************************************************************************/
+
 	Grid::index_type Grid::wrap_index(index_type v, 
 									  index_type i_min, 
 								      index_type i_max){
@@ -97,7 +152,17 @@ namespace lg{
 		else return v;
 
 	}
-
+/**
+ *****************************************************************************************
+ *  @brief Atual
+ *
+ *  Retorna a posição grid[x][y] levando em consideração o wrap
+ * 
+ *  @param      x linha
+ *  @param      y coluna
+ *
+ *	@return 	Coordenada atual
+ ****************************************************************************************/
 	Grid::cell_type& Grid::at(index_type x, 
 							  index_type y){
 		// retorna a posição grid[x][y] levando em consideração o wrap

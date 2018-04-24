@@ -1,0 +1,153 @@
+\hypertarget{classlg_1_1Grid}{}\section{lg\+:\+:Grid Class Reference}
+\label{classlg_1_1Grid}\index{lg\+::\+Grid@{lg\+::\+Grid}}
+
+
+{\ttfamily \#include $<$grid.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef long int \hyperlink{classlg_1_1Grid_a11f5474e622f3053e006acf549c41f10}{dimension\+\_\+type}
+\item 
+typedef \hyperlink{classlg_1_1Cell}{lg\+::\+Cell} \hyperlink{classlg_1_1Grid_a87cd073ad5dc312152c4c94b5343c709}{cell\+\_\+type}
+\item 
+typedef \hyperlink{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20}{lg\+::\+Cell\+::status\+\_\+type} \hyperlink{classlg_1_1Grid_a9938cc664c28a2250b8bfed63f8cb03a}{status\+\_\+type}
+\item 
+typedef int \hyperlink{classlg_1_1Grid_abbbca10278d66749921671ab6ec11fcb}{i\+\_\+cell\+\_\+type}
+\item 
+typedef int \hyperlink{classlg_1_1Grid_a3273db5925a31839b6450849af301e45}{index\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlg_1_1Grid_aec8c088d4c9516fa428a056d3bf84596}{Grid} (\hyperlink{classlg_1_1Grid_a11f5474e622f3053e006acf549c41f10}{dimension\+\_\+type}, \hyperlink{classlg_1_1Grid_a11f5474e622f3053e006acf549c41f10}{dimension\+\_\+type})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classlg_1_1Grid}{Grid} Construtor. \end{DoxyCompactList}\item 
+\hyperlink{classlg_1_1Grid_ada687dd6ced8db79f42f615b68a20d07}{$\sim$\+Grid} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classlg_1_1Grid}{Grid} Destrutor. \end{DoxyCompactList}\item 
+\hyperlink{classlg_1_1Grid_a87cd073ad5dc312152c4c94b5343c709}{cell\+\_\+type} \& \hyperlink{classlg_1_1Grid_a9025d70d81f668f805b03181b3850924}{at} (\hyperlink{classlg_1_1Grid_a3273db5925a31839b6450849af301e45}{index\+\_\+type}, \hyperlink{classlg_1_1Grid_a3273db5925a31839b6450849af301e45}{index\+\_\+type})
+\begin{DoxyCompactList}\small\item\em Atual. \end{DoxyCompactList}\item 
+void \hyperlink{classlg_1_1Grid_ad4f56f6abd2402aebd28f9a4b5bce983}{calculate\+\_\+neighbors} ()
+\begin{DoxyCompactList}\small\item\em Calculate Neighbors. \end{DoxyCompactList}\item 
+void \hyperlink{classlg_1_1Grid_a5023d113d6acda5db7631010c1480e69}{reset\+\_\+neighbors} ()
+\begin{DoxyCompactList}\small\item\em Reset Neihbors. \end{DoxyCompactList}\item 
+void \hyperlink{classlg_1_1Grid_afc1883ddfc34fcb7a47cf7494bb6b6ed}{next\+\_\+gen} ()
+\begin{DoxyCompactList}\small\item\em Next \hyperlink{classlg_1_1Gen}{Gen}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{lg\+::\+Grid@{lg\+::\+Grid}!cell\+\_\+type@{cell\+\_\+type}}
+\index{cell\+\_\+type@{cell\+\_\+type}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{cell\+\_\+type}{cell_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf lg\+::\+Cell} {\bf lg\+::\+Grid\+::cell\+\_\+type}}\hypertarget{classlg_1_1Grid_a87cd073ad5dc312152c4c94b5343c709}{}\label{classlg_1_1Grid_a87cd073ad5dc312152c4c94b5343c709}
+\index{lg\+::\+Grid@{lg\+::\+Grid}!dimension\+\_\+type@{dimension\+\_\+type}}
+\index{dimension\+\_\+type@{dimension\+\_\+type}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{dimension\+\_\+type}{dimension_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef long int {\bf lg\+::\+Grid\+::dimension\+\_\+type}}\hypertarget{classlg_1_1Grid_a11f5474e622f3053e006acf549c41f10}{}\label{classlg_1_1Grid_a11f5474e622f3053e006acf549c41f10}
+\index{lg\+::\+Grid@{lg\+::\+Grid}!i\+\_\+cell\+\_\+type@{i\+\_\+cell\+\_\+type}}
+\index{i\+\_\+cell\+\_\+type@{i\+\_\+cell\+\_\+type}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{i\+\_\+cell\+\_\+type}{i_cell_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf lg\+::\+Grid\+::i\+\_\+cell\+\_\+type}}\hypertarget{classlg_1_1Grid_abbbca10278d66749921671ab6ec11fcb}{}\label{classlg_1_1Grid_abbbca10278d66749921671ab6ec11fcb}
+\index{lg\+::\+Grid@{lg\+::\+Grid}!index\+\_\+type@{index\+\_\+type}}
+\index{index\+\_\+type@{index\+\_\+type}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{index\+\_\+type}{index_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf lg\+::\+Grid\+::index\+\_\+type}}\hypertarget{classlg_1_1Grid_a3273db5925a31839b6450849af301e45}{}\label{classlg_1_1Grid_a3273db5925a31839b6450849af301e45}
+\index{lg\+::\+Grid@{lg\+::\+Grid}!status\+\_\+type@{status\+\_\+type}}
+\index{status\+\_\+type@{status\+\_\+type}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{status\+\_\+type}{status_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf lg\+::\+Cell\+::status\+\_\+type} {\bf lg\+::\+Grid\+::status\+\_\+type}}\hypertarget{classlg_1_1Grid_a9938cc664c28a2250b8bfed63f8cb03a}{}\label{classlg_1_1Grid_a9938cc664c28a2250b8bfed63f8cb03a}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lg\+::\+Grid@{lg\+::\+Grid}!Grid@{Grid}}
+\index{Grid@{Grid}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{Grid(dimension\+\_\+type, dimension\+\_\+type)}{Grid(dimension_type, dimension_type)}}]{\setlength{\rightskip}{0pt plus 5cm}lg\+::\+Grid\+::\+Grid (
+\begin{DoxyParamCaption}
+\item[{{\bf dimension\+\_\+type}}]{r, }
+\item[{{\bf dimension\+\_\+type}}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Grid_aec8c088d4c9516fa428a056d3bf84596}{}\label{classlg_1_1Grid_aec8c088d4c9516fa428a056d3bf84596}
+
+
+\hyperlink{classlg_1_1Grid}{Grid} Construtor. 
+
+Inicializa uma \hyperlink{classlg_1_1Grid}{Grid} com células mortas
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & número de linhas \\
+\hline
+{\em c} & número de colunas \\
+\hline
+\end{DoxyParams}
+\index{lg\+::\+Grid@{lg\+::\+Grid}!````~Grid@{$\sim$\+Grid}}
+\index{````~Grid@{$\sim$\+Grid}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{$\sim$\+Grid()}{~Grid()}}]{\setlength{\rightskip}{0pt plus 5cm}lg\+::\+Grid\+::$\sim$\+Grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Grid_ada687dd6ced8db79f42f615b68a20d07}{}\label{classlg_1_1Grid_ada687dd6ced8db79f42f615b68a20d07}
+
+
+\hyperlink{classlg_1_1Grid}{Grid} Destrutor. 
+
+Desaloca uma \hyperlink{classlg_1_1Grid}{Grid} 
+
+\subsection{Member Function Documentation}
+\index{lg\+::\+Grid@{lg\+::\+Grid}!at@{at}}
+\index{at@{at}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{at(index\+\_\+type, index\+\_\+type)}{at(index_type, index_type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grid\+::cell\+\_\+type} \& lg\+::\+Grid\+::at (
+\begin{DoxyParamCaption}
+\item[{{\bf index\+\_\+type}}]{x, }
+\item[{{\bf index\+\_\+type}}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Grid_a9025d70d81f668f805b03181b3850924}{}\label{classlg_1_1Grid_a9025d70d81f668f805b03181b3850924}
+
+
+Atual. 
+
+Retorna a posição grid\mbox{[}x\mbox{]}\mbox{[}y\mbox{]} levando em consideração o wrap
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & linha \\
+\hline
+{\em y} & coluna\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Coordenada atual 
+\end{DoxyReturn}
+\index{lg\+::\+Grid@{lg\+::\+Grid}!calculate\+\_\+neighbors@{calculate\+\_\+neighbors}}
+\index{calculate\+\_\+neighbors@{calculate\+\_\+neighbors}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{calculate\+\_\+neighbors()}{calculate_neighbors()}}]{\setlength{\rightskip}{0pt plus 5cm}void lg\+::\+Grid\+::calculate\+\_\+neighbors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Grid_ad4f56f6abd2402aebd28f9a4b5bce983}{}\label{classlg_1_1Grid_ad4f56f6abd2402aebd28f9a4b5bce983}
+
+
+Calculate Neighbors. 
+
+Conta quantas células vizinhas estão vivas \index{lg\+::\+Grid@{lg\+::\+Grid}!next\+\_\+gen@{next\+\_\+gen}}
+\index{next\+\_\+gen@{next\+\_\+gen}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{next\+\_\+gen()}{next_gen()}}]{\setlength{\rightskip}{0pt plus 5cm}void lg\+::\+Grid\+::next\+\_\+gen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Grid_afc1883ddfc34fcb7a47cf7494bb6b6ed}{}\label{classlg_1_1Grid_afc1883ddfc34fcb7a47cf7494bb6b6ed}
+
+
+Next \hyperlink{classlg_1_1Gen}{Gen}. 
+
+Aplica as regras para determina quais células nascem ou morrem na próxima geração \index{lg\+::\+Grid@{lg\+::\+Grid}!reset\+\_\+neighbors@{reset\+\_\+neighbors}}
+\index{reset\+\_\+neighbors@{reset\+\_\+neighbors}!lg\+::\+Grid@{lg\+::\+Grid}}
+\subsubsection[{\texorpdfstring{reset\+\_\+neighbors()}{reset_neighbors()}}]{\setlength{\rightskip}{0pt plus 5cm}void lg\+::\+Grid\+::reset\+\_\+neighbors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Grid_a5023d113d6acda5db7631010c1480e69}{}\label{classlg_1_1Grid_a5023d113d6acda5db7631010c1480e69}
+
+
+Reset Neihbors. 
+
+Coloca todos os vizinhos de uma célula em valor 0 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{grid_8h}{grid.\+h}\item 
+src/\hyperlink{grid_8cpp}{grid.\+cpp}\end{DoxyCompactItemize}

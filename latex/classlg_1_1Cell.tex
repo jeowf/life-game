@@ -1,0 +1,120 @@
+\hypertarget{classlg_1_1Cell}{}\section{lg\+:\+:Cell Class Reference}
+\label{classlg_1_1Cell}\index{lg\+::\+Cell@{lg\+::\+Cell}}
+
+
+{\ttfamily \#include $<$cell.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20}{status\+\_\+type} \+: short int \{ \hyperlink{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20abb4784231ff45108ee20bad16e4a2e8c}{status\+\_\+type\+::\+D\+E\+AD} = 0, 
+\hyperlink{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20a3bfa0eed9e858c516e816a519b2a82eb}{status\+\_\+type\+::\+A\+L\+I\+VE}
+ \}
+\item 
+typedef int \hyperlink{classlg_1_1Cell_aa88691e430082878fa8092c25865ab53}{neighbors\+\_\+type}
+\item 
+typedef int \& \hyperlink{classlg_1_1Cell_a6b1da298dc7e18f248793dad5a08942a}{ref}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlg_1_1Cell_a83ad0d1ad0c41568dd1ca705fd9e6d79}{Cell} (\hyperlink{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20}{status\+\_\+type}, \hyperlink{classlg_1_1Cell_aa88691e430082878fa8092c25865ab53}{neighbors\+\_\+type})
+\item 
+\hyperlink{classlg_1_1Cell_a7f0e924b0e4ce962e672fef3cc19845e}{Cell} ()
+\item 
+\hyperlink{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20}{status\+\_\+type} \hyperlink{classlg_1_1Cell_a987774f15b2ea5dbdd1660d90e3a3a9b}{get\+\_\+status} (void) const 
+\item 
+void \hyperlink{classlg_1_1Cell_a6189b8c4b586f23af49268f18728b767}{set\+\_\+status} (\hyperlink{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20}{status\+\_\+type})
+\item 
+\hyperlink{classlg_1_1Cell_aa88691e430082878fa8092c25865ab53}{neighbors\+\_\+type} \hyperlink{classlg_1_1Cell_ae612dac1ca0c6f35849f4467961c9511}{get\+\_\+n\+\_\+neighbors} (void) const 
+\item 
+void \hyperlink{classlg_1_1Cell_a88953b9e1c8f464604b2f80883d1117c}{set\+\_\+n\+\_\+neighbors} (\hyperlink{classlg_1_1Cell_aa88691e430082878fa8092c25865ab53}{neighbors\+\_\+type})
+\item 
+\hyperlink{classlg_1_1Cell_a6b1da298dc7e18f248793dad5a08942a}{ref} \hyperlink{classlg_1_1Cell_a1e8a1a70c7d371ab205d32f6cde254da}{operator+=} (const \hyperlink{classlg_1_1Cell_a6b1da298dc7e18f248793dad5a08942a}{ref} rhs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!neighbors\+\_\+type@{neighbors\+\_\+type}}
+\index{neighbors\+\_\+type@{neighbors\+\_\+type}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{neighbors\+\_\+type}{neighbors_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf lg\+::\+Cell\+::neighbors\+\_\+type}}\hypertarget{classlg_1_1Cell_aa88691e430082878fa8092c25865ab53}{}\label{classlg_1_1Cell_aa88691e430082878fa8092c25865ab53}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!ref@{ref}}
+\index{ref@{ref}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{ref}{ref}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int\& {\bf lg\+::\+Cell\+::ref}}\hypertarget{classlg_1_1Cell_a6b1da298dc7e18f248793dad5a08942a}{}\label{classlg_1_1Cell_a6b1da298dc7e18f248793dad5a08942a}
+
+
+\subsection{Member Enumeration Documentation}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!status\+\_\+type@{status\+\_\+type}}
+\index{status\+\_\+type@{status\+\_\+type}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{status\+\_\+type}{status_type}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf lg\+::\+Cell\+::status\+\_\+type} \+: short int\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20}{}\label{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\+E\+AD@{D\+E\+AD}!lg\+::\+Cell@{lg\+::\+Cell}}\index{lg\+::\+Cell@{lg\+::\+Cell}!D\+E\+AD@{D\+E\+AD}}\item[{\em 
+D\+E\+AD\hypertarget{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20abb4784231ff45108ee20bad16e4a2e8c}{}\label{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20abb4784231ff45108ee20bad16e4a2e8c}
+}]\index{A\+L\+I\+VE@{A\+L\+I\+VE}!lg\+::\+Cell@{lg\+::\+Cell}}\index{lg\+::\+Cell@{lg\+::\+Cell}!A\+L\+I\+VE@{A\+L\+I\+VE}}\item[{\em 
+A\+L\+I\+VE\hypertarget{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20a3bfa0eed9e858c516e816a519b2a82eb}{}\label{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20a3bfa0eed9e858c516e816a519b2a82eb}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{Cell(status\+\_\+type, neighbors\+\_\+type)}{Cell(status_type, neighbors_type)}}]{\setlength{\rightskip}{0pt plus 5cm}lg\+::\+Cell\+::\+Cell (
+\begin{DoxyParamCaption}
+\item[{{\bf status\+\_\+type}}]{s, }
+\item[{{\bf neighbors\+\_\+type}}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Cell_a83ad0d1ad0c41568dd1ca705fd9e6d79}{}\label{classlg_1_1Cell_a83ad0d1ad0c41568dd1ca705fd9e6d79}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{Cell()}{Cell()}}]{\setlength{\rightskip}{0pt plus 5cm}lg\+::\+Cell\+::\+Cell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Cell_a7f0e924b0e4ce962e672fef3cc19845e}{}\label{classlg_1_1Cell_a7f0e924b0e4ce962e672fef3cc19845e}
+
+
+\subsection{Member Function Documentation}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!get\+\_\+n\+\_\+neighbors@{get\+\_\+n\+\_\+neighbors}}
+\index{get\+\_\+n\+\_\+neighbors@{get\+\_\+n\+\_\+neighbors}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{get\+\_\+n\+\_\+neighbors(void) const }{get_n_neighbors(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cell\+::neighbors\+\_\+type} lg\+::\+Cell\+::get\+\_\+n\+\_\+neighbors (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classlg_1_1Cell_ae612dac1ca0c6f35849f4467961c9511}{}\label{classlg_1_1Cell_ae612dac1ca0c6f35849f4467961c9511}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!get\+\_\+status@{get\+\_\+status}}
+\index{get\+\_\+status@{get\+\_\+status}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{get\+\_\+status(void) const }{get_status(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cell\+::status\+\_\+type} lg\+::\+Cell\+::get\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classlg_1_1Cell_a987774f15b2ea5dbdd1660d90e3a3a9b}{}\label{classlg_1_1Cell_a987774f15b2ea5dbdd1660d90e3a3a9b}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{operator+=(const ref rhs)}{operator+=(const ref rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cell\+::ref} lg\+::\+Cell\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf ref}}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Cell_a1e8a1a70c7d371ab205d32f6cde254da}{}\label{classlg_1_1Cell_a1e8a1a70c7d371ab205d32f6cde254da}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!set\+\_\+n\+\_\+neighbors@{set\+\_\+n\+\_\+neighbors}}
+\index{set\+\_\+n\+\_\+neighbors@{set\+\_\+n\+\_\+neighbors}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{set\+\_\+n\+\_\+neighbors(neighbors\+\_\+type)}{set_n_neighbors(neighbors_type)}}]{\setlength{\rightskip}{0pt plus 5cm}void lg\+::\+Cell\+::set\+\_\+n\+\_\+neighbors (
+\begin{DoxyParamCaption}
+\item[{{\bf neighbors\+\_\+type}}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Cell_a88953b9e1c8f464604b2f80883d1117c}{}\label{classlg_1_1Cell_a88953b9e1c8f464604b2f80883d1117c}
+\index{lg\+::\+Cell@{lg\+::\+Cell}!set\+\_\+status@{set\+\_\+status}}
+\index{set\+\_\+status@{set\+\_\+status}!lg\+::\+Cell@{lg\+::\+Cell}}
+\subsubsection[{\texorpdfstring{set\+\_\+status(status\+\_\+type)}{set_status(status_type)}}]{\setlength{\rightskip}{0pt plus 5cm}void lg\+::\+Cell\+::set\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{{\bf status\+\_\+type}}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Cell_a6189b8c4b586f23af49268f18728b767}{}\label{classlg_1_1Cell_a6189b8c4b586f23af49268f18728b767}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{cell_8h}{cell.\+h}\item 
+src/\hyperlink{cell_8cpp}{cell.\+cpp}\end{DoxyCompactItemize}

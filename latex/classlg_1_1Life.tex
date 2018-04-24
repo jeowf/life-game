@@ -1,0 +1,139 @@
+\hypertarget{classlg_1_1Life}{}\section{lg\+:\+:Life Class Reference}
+\label{classlg_1_1Life}\index{lg\+::\+Life@{lg\+::\+Life}}
+
+
+{\ttfamily \#include $<$life.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classlg_1_1Grid_a11f5474e622f3053e006acf549c41f10}{lg\+::\+Grid\+::dimension\+\_\+type} \hyperlink{classlg_1_1Life_a05357ceab438f920c6f3dbdde93f28be}{dimension\+\_\+type}
+\item 
+typedef \hyperlink{classlg_1_1Grid}{lg\+::\+Grid} \hyperlink{classlg_1_1Life_ac1ca0328d97e90476808cb39eb0a9959}{grid\+\_\+type}
+\item 
+typedef \hyperlink{classlg_1_1Cell_a10376a213d664b96708f0d1e6d512f20}{lg\+::\+Cell\+::status\+\_\+type} \hyperlink{classlg_1_1Life_ade9bb352ec981ff88c2ec37a0a12006c}{status\+\_\+type}
+\item 
+typedef char \hyperlink{classlg_1_1Life_a9d2980d7a77c0b01c639a013765869db}{char\+\_\+type}
+\item 
+typedef int \hyperlink{classlg_1_1Life_a35201ae72bdab2eb51e6d9782b48a920}{i\+\_\+cell\+\_\+type}
+\item 
+typedef int \hyperlink{classlg_1_1Life_a31abf1588df7f6f299cadce0ab6da9f9}{gen\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlg_1_1Life_af271348862fd51ef943c4fcfd33b277d}{Life} (\hyperlink{classlg_1_1Life_a05357ceab438f920c6f3dbdde93f28be}{dimension\+\_\+type}, \hyperlink{classlg_1_1Life_a05357ceab438f920c6f3dbdde93f28be}{dimension\+\_\+type}, \hyperlink{classlg_1_1Life_a9d2980d7a77c0b01c639a013765869db}{char\+\_\+type})
+\item 
+\hyperlink{classlg_1_1Life_a51ad6463fade663371a346415ed08ea2}{$\sim$\+Life} ()
+\item 
+void \hyperlink{classlg_1_1Life_a2cf5eda06fa7f1858f91af1edb667bb0}{set\+\_\+alive} (\hyperlink{classlg_1_1Life_a35201ae72bdab2eb51e6d9782b48a920}{i\+\_\+cell\+\_\+type}, \hyperlink{classlg_1_1Life_a35201ae72bdab2eb51e6d9782b48a920}{i\+\_\+cell\+\_\+type} $\ast$$\ast$)
+\item 
+void \hyperlink{classlg_1_1Life_a20c4962e8009b6604e14c61e677dc51c}{update} ()
+\item 
+void \hyperlink{classlg_1_1Life_aba1f1bbd7a45c9a8bd33b1b077ac1c1e}{save\+\_\+gen} ()
+\item 
+\hyperlink{classlg_1_1Life_a31abf1588df7f6f299cadce0ab6da9f9}{gen\+\_\+type} \hyperlink{classlg_1_1Life_af20c8252f980eacc561a19dd0fc99a29}{is\+\_\+stable} () const 
+\item 
+bool \hyperlink{classlg_1_1Life_ac4f6ba39c03e7986f73dc107333407f5}{is\+\_\+extinct} () const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlg_1_1Life_adffe762ef7508d96b558e2f38baaad93}{operator$<$$<$} (std\+::ostream \&, const \hyperlink{classlg_1_1Life}{Life} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{lg\+::\+Life@{lg\+::\+Life}!char\+\_\+type@{char\+\_\+type}}
+\index{char\+\_\+type@{char\+\_\+type}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{char\+\_\+type}{char_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef char {\bf lg\+::\+Life\+::char\+\_\+type}}\hypertarget{classlg_1_1Life_a9d2980d7a77c0b01c639a013765869db}{}\label{classlg_1_1Life_a9d2980d7a77c0b01c639a013765869db}
+\index{lg\+::\+Life@{lg\+::\+Life}!dimension\+\_\+type@{dimension\+\_\+type}}
+\index{dimension\+\_\+type@{dimension\+\_\+type}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{dimension\+\_\+type}{dimension_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf lg\+::\+Grid\+::dimension\+\_\+type} {\bf lg\+::\+Life\+::dimension\+\_\+type}}\hypertarget{classlg_1_1Life_a05357ceab438f920c6f3dbdde93f28be}{}\label{classlg_1_1Life_a05357ceab438f920c6f3dbdde93f28be}
+\index{lg\+::\+Life@{lg\+::\+Life}!gen\+\_\+type@{gen\+\_\+type}}
+\index{gen\+\_\+type@{gen\+\_\+type}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{gen\+\_\+type}{gen_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf lg\+::\+Life\+::gen\+\_\+type}}\hypertarget{classlg_1_1Life_a31abf1588df7f6f299cadce0ab6da9f9}{}\label{classlg_1_1Life_a31abf1588df7f6f299cadce0ab6da9f9}
+\index{lg\+::\+Life@{lg\+::\+Life}!grid\+\_\+type@{grid\+\_\+type}}
+\index{grid\+\_\+type@{grid\+\_\+type}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{grid\+\_\+type}{grid_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf lg\+::\+Grid} {\bf lg\+::\+Life\+::grid\+\_\+type}}\hypertarget{classlg_1_1Life_ac1ca0328d97e90476808cb39eb0a9959}{}\label{classlg_1_1Life_ac1ca0328d97e90476808cb39eb0a9959}
+\index{lg\+::\+Life@{lg\+::\+Life}!i\+\_\+cell\+\_\+type@{i\+\_\+cell\+\_\+type}}
+\index{i\+\_\+cell\+\_\+type@{i\+\_\+cell\+\_\+type}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{i\+\_\+cell\+\_\+type}{i_cell_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf lg\+::\+Life\+::i\+\_\+cell\+\_\+type}}\hypertarget{classlg_1_1Life_a35201ae72bdab2eb51e6d9782b48a920}{}\label{classlg_1_1Life_a35201ae72bdab2eb51e6d9782b48a920}
+\index{lg\+::\+Life@{lg\+::\+Life}!status\+\_\+type@{status\+\_\+type}}
+\index{status\+\_\+type@{status\+\_\+type}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{status\+\_\+type}{status_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf lg\+::\+Cell\+::status\+\_\+type} {\bf lg\+::\+Life\+::status\+\_\+type}}\hypertarget{classlg_1_1Life_ade9bb352ec981ff88c2ec37a0a12006c}{}\label{classlg_1_1Life_ade9bb352ec981ff88c2ec37a0a12006c}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lg\+::\+Life@{lg\+::\+Life}!Life@{Life}}
+\index{Life@{Life}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{Life(dimension\+\_\+type, dimension\+\_\+type, char\+\_\+type)}{Life(dimension_type, dimension_type, char_type)}}]{\setlength{\rightskip}{0pt plus 5cm}lg\+::\+Life\+::\+Life (
+\begin{DoxyParamCaption}
+\item[{{\bf dimension\+\_\+type}}]{r, }
+\item[{{\bf dimension\+\_\+type}}]{c, }
+\item[{{\bf char\+\_\+type}}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Life_af271348862fd51ef943c4fcfd33b277d}{}\label{classlg_1_1Life_af271348862fd51ef943c4fcfd33b277d}
+\index{lg\+::\+Life@{lg\+::\+Life}!````~Life@{$\sim$\+Life}}
+\index{````~Life@{$\sim$\+Life}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{$\sim$\+Life()}{~Life()}}]{\setlength{\rightskip}{0pt plus 5cm}lg\+::\+Life\+::$\sim$\+Life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Life_a51ad6463fade663371a346415ed08ea2}{}\label{classlg_1_1Life_a51ad6463fade663371a346415ed08ea2}
+
+
+\subsection{Member Function Documentation}
+\index{lg\+::\+Life@{lg\+::\+Life}!is\+\_\+extinct@{is\+\_\+extinct}}
+\index{is\+\_\+extinct@{is\+\_\+extinct}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{is\+\_\+extinct() const }{is_extinct() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool lg\+::\+Life\+::is\+\_\+extinct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classlg_1_1Life_ac4f6ba39c03e7986f73dc107333407f5}{}\label{classlg_1_1Life_ac4f6ba39c03e7986f73dc107333407f5}
+\index{lg\+::\+Life@{lg\+::\+Life}!is\+\_\+stable@{is\+\_\+stable}}
+\index{is\+\_\+stable@{is\+\_\+stable}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{is\+\_\+stable() const }{is_stable() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Life\+::gen\+\_\+type} lg\+::\+Life\+::is\+\_\+stable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classlg_1_1Life_af20c8252f980eacc561a19dd0fc99a29}{}\label{classlg_1_1Life_af20c8252f980eacc561a19dd0fc99a29}
+\index{lg\+::\+Life@{lg\+::\+Life}!save\+\_\+gen@{save\+\_\+gen}}
+\index{save\+\_\+gen@{save\+\_\+gen}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{save\+\_\+gen()}{save_gen()}}]{\setlength{\rightskip}{0pt plus 5cm}void lg\+::\+Life\+::save\+\_\+gen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Life_aba1f1bbd7a45c9a8bd33b1b077ac1c1e}{}\label{classlg_1_1Life_aba1f1bbd7a45c9a8bd33b1b077ac1c1e}
+\index{lg\+::\+Life@{lg\+::\+Life}!set\+\_\+alive@{set\+\_\+alive}}
+\index{set\+\_\+alive@{set\+\_\+alive}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{set\+\_\+alive(i\+\_\+cell\+\_\+type, i\+\_\+cell\+\_\+type $\ast$$\ast$)}{set_alive(i_cell_type, i_cell_type **)}}]{\setlength{\rightskip}{0pt plus 5cm}void lg\+::\+Life\+::set\+\_\+alive (
+\begin{DoxyParamCaption}
+\item[{{\bf i\+\_\+cell\+\_\+type}}]{alive\+\_\+value, }
+\item[{{\bf i\+\_\+cell\+\_\+type} $\ast$$\ast$}]{i\+\_\+grid}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Life_a2cf5eda06fa7f1858f91af1edb667bb0}{}\label{classlg_1_1Life_a2cf5eda06fa7f1858f91af1edb667bb0}
+\index{lg\+::\+Life@{lg\+::\+Life}!update@{update}}
+\index{update@{update}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{update()}{update()}}]{\setlength{\rightskip}{0pt plus 5cm}void lg\+::\+Life\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlg_1_1Life_a20c4962e8009b6604e14c61e677dc51c}{}\label{classlg_1_1Life_a20c4962e8009b6604e14c61e677dc51c}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{lg\+::\+Life@{lg\+::\+Life}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!lg\+::\+Life@{lg\+::\+Life}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const {\bf Life} \&}]{lf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classlg_1_1Life_adffe762ef7508d96b558e2f38baaad93}{}\label{classlg_1_1Life_adffe762ef7508d96b558e2f38baaad93}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{life_8h}{life.\+h}\item 
+src/\hyperlink{life_8cpp}{life.\+cpp}\end{DoxyCompactItemize}
