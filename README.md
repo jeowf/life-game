@@ -47,7 +47,7 @@ Assim será gerado um executável nomeado "life".
 Para executar o programa use:
 
 ```
-./life <input_cfg_file> \[<output_cfg_evolution_file>\] \[<a> to auto\]
+./life <input_cfg_file> [<output_cfg_evolution_file>] [<a> to auto]
 ```
 
 Onde o primeiro parâmetro é um arquivo de entrada contendo o tamanho da matriz,
@@ -70,7 +70,7 @@ Atualmente o programa trata os seguintes erros:
 
 ## Arquivos do projeto
 
-A seguir descreveremos de forma rápida os arquivos que estão no projeto. 
+A seguir descreveremos de forma rápida alguns arquivos que estão no projeto. 
 
 ### cell.cpp
 
