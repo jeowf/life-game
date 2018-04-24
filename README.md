@@ -88,5 +88,5 @@ a próxima geração.
 
 ### life_game.cpp
 
-Faz a leitua do arquivo de entrada pegando número de linhas, colunas, caractere desejado para indicar vida e
+Faz a leitura do arquivo de entrada pegando número de linhas, colunas, caractere desejado para indicar vida e
 aloca a matriz inicial.
