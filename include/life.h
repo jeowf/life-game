@@ -47,7 +47,7 @@ namespace lg{
 
 		void save_gen();
 
-		bool is_stable() const;
+		gen_type is_stable() const;
 
 		bool is_extinct() const;
 

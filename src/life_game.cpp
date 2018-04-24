@@ -64,11 +64,11 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 					//place >> dead;
 					//field[i][j] = dead;
 
-					outfile << a[i][j];// caso exista arquivo de saida salva uma cópia nele
+					//outfile << a[i][j];// caso exista arquivo de saida salva uma cópia nele
 
 				}
 
-				outfile << std::endl;
+				//outfile << std::endl;
 			}
 		}
 	} else {
@@ -98,13 +98,37 @@ int main(int argc, char* argv[]){ // Argumentos da linha de comando
 	lg::Life life(m, n, alive);
 	life.set_alive(1, a);
 
-	std::cout << life;
+	std::cout << life << std::endl;
+	outfile << life << std::endl;
 
-	
+	char sel = 'y';
+	int s_config = -1;
 
-	for (int i = 0; i < 10; i++){
+	while (sel == 'y'){
+		
+
+		std::cout << "Next generation? (y/N) ";
+		std::cin >> sel;
+
+		
+
+		std::cout<<std::endl;
+
 		life.update();
-		std::cout << life;
+		std::cout << life << std::endl;
+		outfile << life << std::endl;
+		
+		s_config = life.is_stable();
+		if (s_config >= 0){
+			std::cout << "STABLE CONFIGURATION STARTING AT GENERATION "<< s_config << std::endl;
+			outfile << "STABLE CONFIGURATION STARTING AT GENERATION "<< s_config << std::endl;
+			break;
+		} else if (life.is_extinct() == true){
+			std::cout << "EXTINCT CONFIGURATION!" << std::endl;
+			outfile << "EXTINCT CONFIGURATION!" << std::endl;
+			break;
+		}
+
 	}
 
 	file.close();// fecha os arquivos

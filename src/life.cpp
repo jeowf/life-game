@@ -31,6 +31,7 @@ namespace lg{
 		grid->next_gen();
 		this->save_gen();
 		gen++;
+		//std::cout << "EXTINCTC?: " << (bool) this->is_extinct() << std::endl;
 
 	}
 
@@ -43,6 +44,20 @@ namespace lg{
 			}
 		}
 		generations.push_back(gen);
+	}
+
+	Life::gen_type Life::is_stable() const{
+		if (generations.size() > 1){
+			for (int i = 0; i < (gen); i++){
+				if (generations[i] == generations[gen])
+					return i;
+			}
+		} 
+		return -1;
+	}
+
+	bool Life::is_extinct() const{
+		return generations[gen].size() == 0;
 	}
 
 	std::ostream& operator<<(std::ostream& os, const Life& lf) {  
@@ -70,9 +85,7 @@ namespace lg{
 	}  
   
 	
-	bool Life::is_stable() const{
-		return false;
-	}
+	
 
 
 
