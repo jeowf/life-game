@@ -12,7 +12,7 @@ BIN_DIR     = ./bin/
 
 life: $(OBJS)
 	$(CC) $(OBJS) -o $(PROG)
-	mkdir $(BIN_DIR)
+	mkdir -p $(BIN_DIR)
 	mv *.o $(BIN_DIR)
 
 $(BUILD_PATH)/%.o: $(SRC_PATH)/%.$(SRC_EXT)
